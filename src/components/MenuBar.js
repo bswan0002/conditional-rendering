@@ -45,7 +45,7 @@ const classSelector = (props, page) => {
 
 const MenuBar = (props) => {
   return (
-    <div onClick={props.onChange} className="ui four item menu">
+    <div onClick={props.handleClick} className="ui four item menu">
       <a className={classSelector(props, "profile")} id="profile">
         <i className="user large icon" id="profile" />
       </a>

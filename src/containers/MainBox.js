@@ -22,7 +22,7 @@ class MainBox extends React.Component {
     selectedPage: "profile",
   };
 
-  onChange = (e) => {
+  handleClick = (e) => {
     this.setState({ selectedPage: e.target.id });
   };
 
@@ -30,7 +30,7 @@ class MainBox extends React.Component {
     return (
       <div>
         <MenuBar
-          onChange={this.onChange}
+          handleClick={this.handleClick}
           selectedPage={this.state.selectedPage}
         />
         {this.pageToDisplay()}
