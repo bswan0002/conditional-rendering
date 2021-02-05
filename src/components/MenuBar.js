@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { Component } from "react";
 
-const MenuBar = (props) => {
-
-  /*
+// const MenuBar = (props) => {
+/*
 
   The 'a' tags below are the menu items. Think about the way a menu 
   should work. When you click a menu item, the button typically becomes
@@ -13,26 +12,57 @@ const MenuBar = (props) => {
 
   */
 
+//   this.state = {
+//     selectedPage: "profile",
+//   };
+
+//   return (
+//     <div className="ui four item menu">
+//       <a className="item active" id="profile">
+//         <i className="user large icon" id="profile" />
+//       </a>
+
+//       <a className="item" id="photo">
+//         <i className="photo large icon" id="photo" />
+//       </a>
+
+//       <a className="item" id="cocktail">
+//         <i className="cocktail large icon" id="cocktail" />
+//       </a>
+
+//       <a className="item" id="pokemon">
+//         <i className=" themeisle large icon" id="pokemon" />
+//       </a>
+//     </div>
+//   );
+// };
+
+// export default MenuBar;
+
+const classSelector = (props, page) => {
+  return props.selectedPage === page ? "item active" : "item";
+};
+
+const MenuBar = (props) => {
   return (
-    <div className="ui four item menu">
-      <a className="item active" id="profile">
-        <i className="user large icon" id="profile"/>
+    <div onClick={props.onChange} className="ui four item menu">
+      <a className={classSelector(props, "profile")} id="profile">
+        <i className="user large icon" id="profile" />
       </a>
 
-      <a className="item" id="photo">
-        <i className="photo large icon" id="photo"/>
+      <a className={classSelector(props, "photo")} id="photo">
+        <i className="photo large icon" id="photo" />
       </a>
 
-      <a className="item" id="cocktail">
-        <i className="cocktail large icon" id="cocktail"/>
+      <a className={classSelector(props, "cocktail")} id="cocktail">
+        <i className="cocktail large icon" id="cocktail" />
       </a>
 
-      <a className="item" id="pokemon"> 
-        <i className=" themeisle large icon" id="pokemon"/>
+      <a className={classSelector(props, "pokemon")} id="pokemon">
+        <i className=" themeisle large icon" id="pokemon" />
       </a>
     </div>
-  )
+  );
+};
 
-}
-
-export default MenuBar
+export default MenuBar;
